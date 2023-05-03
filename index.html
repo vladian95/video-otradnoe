@@ -69,6 +69,16 @@
         top: 50px;
         right: 20px;
       }
+
+      @media only screen and (max-width: 767px) and (orientation: portrait) {
+        video {
+          transform: rotate(90deg);
+          transform-origin: center center;
+          width: 100vh;
+          height: 100vw;
+          object-fit: cover;
+        }
+      }
     </style>
 
     <section>
@@ -90,8 +100,8 @@
         <div class="popup-video">
           <video
             src="./2023-05-03 15.39.06.mp4"
-            controls
             autoplay
+            controls
             playsinline
             webkitfullscreen
             mozallowfullscreen
