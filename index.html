@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documentе</title>
+  </head>
+  <body>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        overflow-x: hidden;
+      }
+
+      section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        width: 100%;
+      }
+
+      .img-man-wrap {
+        position: relative;
+        width: 100%;
+      }
+
+      .img-play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+      }
+
+      .popup-wrapper {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 1);
+        z-index: 999;
+      }
+
+      .popup-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+      }
+
+      video {
+        width: 100%;
+        height: 100vh;
+      }
+
+      button {
+        position: absolute;
+        top: 50px;
+        right: 20px;
+      }
+    </style>
+
+    <section>
+      <div class="img-wrapper">
+        <div class="img-man-wrap">
+          <img
+            class="img-man"
+            src="https://thumb.tildacdn.com/tild3536-3866-4463-b032-613736343432/-/cover/760x450/center/center/-/format/webp/Untitled_111.jpg"
+            alt="man"
+          />
+          <img
+            class="img-play"
+            src="https://static.tildacdn.com/tild3131-3736-4037-a262-376335343432/Group_82.svg"
+            alt="play"
+          />
+        </div>
+      </div>
+      <div class="popup-wrapper">
+        <div class="popup-video">
+          <video src="./2023-05-03 15.39.06.mp4" controls autoplay></video>
+          <button>x</button>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const imgPlay = document.querySelector('.img-play');
+      const popupWrapper = document.querySelector('.popup-wrapper');
+      const popupVideo = document.querySelector('.popup-video');
+      const popupVideoClose = document.querySelector('.popup-video button');
+
+      imgPlay.addEventListener('click', function () {
+        popupWrapper.style.display = 'block';
+      });
+
+      popupVideoClose.addEventListener('click', function () {
+        popupWrapper.style.display = 'none';
+        popupVideo.querySelector('video').pause();
+      });
+    </script>
+  </body>
+</html>
