@@ -150,10 +150,10 @@
 
       imgPlay.addEventListener('click', () => {
         video.requestFullscreen(); // запрос на полноэкранный режим
-        if (window.innerWidth < window.innerHeight) {
-          // если видео открыто вертикально, повернуть на 90 градусов
-          video.style.transform = 'rotate(90deg)';
-        }
+        // if (window.innerWidth < window.innerHeight) {
+        //   // если видео открыто вертикально, повернуть на 90 градусов
+        //   video.style.transform = 'rotate(90deg)';
+        // }
         video.play(); // воспроизведение видео
       });
     </script>
