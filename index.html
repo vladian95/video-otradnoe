@@ -116,6 +116,22 @@
         popupWrapper.style.display = 'none';
         popupVideo.querySelector('video').pause();
       });
+
+      const video = document.querySelector('video');
+
+      function enterFullscreen() {
+        if (video.requestFullscreen) {
+          video.requestFullscreen();
+        } else if (video.webkitRequestFullscreen) {
+          video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) {
+          video.msRequestFullscreen();
+        }
+      }
+
+      if (window.matchMedia('(max-width: 767px)').matches) {
+        enterFullscreen();
+      }
     </script>
   </body>
 </html>
